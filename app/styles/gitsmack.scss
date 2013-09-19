@@ -3,9 +3,15 @@ $light-grey: #acacac;
 $white: #ffffff;
 $dark-grey: #909090;
 $very-light-grey: #EEEEEE;
+$cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
 
 .navbar-header {
 	background-image: url(images/navbar.png);
+}
+
+=======
+.container {
+	position: relative;
 }
 
 .chatroom-container {
@@ -16,7 +22,7 @@ $very-light-grey: #EEEEEE;
 	border-radius: 10px;
 	
 	// box-shadow: 1px 5px 2px $dark-grey;
-	background: $blue;
+	background: $cool-blue-gradient;
 	padding: 1px;
 	padding-top: 40px;
 	padding-bottom: 5px;
@@ -82,4 +88,12 @@ $very-light-grey: #EEEEEE;
 		margin-top: 20px;
 		vertical-align: middle;
 	}
+}
+#username {
+	width: 150px;
+	height: 40px;
+	position: absolute;
+	right: 20px;
+	margin: 5px;
+	border-radius:6px;
 }
