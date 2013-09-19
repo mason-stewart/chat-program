@@ -1,13 +1,12 @@
 $(document).ready(function(){
-	refreshMessages()
-	setInterval(refreshMessages, 3000);
+	getMessages()
 	$("#submit-btn").click(function(){saveMessage()})
 })
 
 
 
 var Message = Parse.Object.extend("Message");
-var message = new Message();	
+	
 var MessageCollection = Parse.Collection.extend({		
 	model: Message						
 });
@@ -16,23 +15,25 @@ var messages = new MessageCollection();
 
 // function to save message to parse
 
-function saveMessage(messageArg){
+function saveMessage(){
+	var message = new Message();
 	message.set('username', $('#username').val());
 	message.set('content', $('.form-control').val());
-	
-	message.save(null, {						
+	// message.set('time', formatTime(message.createdAt))
+	$('.form-control').val('');
+	message.save(message, {						
 
-		success: function(msg){
+		success: function(message){
 			console.log('message saved, YEAH!!!!!!!!!!!!!!!!!')
-			refreshMessages()
+			addToChatWindow(message);
 		}, 
-		error: function(msg, error){
+		error: function(message, error){
 			console.log('message not saved, BOOOO!!!!!!!!!!!!!!!!!')
 		}
 	})	
 }
 
-function refreshMessages(){
+function getMessages(){
 	messages.fetch({
 		success: function(collection){
 			collection.each(function(msg){
@@ -43,11 +44,19 @@ function refreshMessages(){
 }
 
 
-function addToChatWindow(message){
-
+function addToChatWindow(msg){
+	message = msg;
 	var chatMessage = _.template($("#chat-message").text());
 	chatMessage({
 		message: message
 	})
 	$(".chat-window").append(chatMessage)
 }
+function timeoutRefresh(){
+	setInterval(checkForNewChat, 3000);
+}
+
+// function formatTime(timestamp) {
+// 	var time = moment(timestamp, "hh-mm");
+// 	return time;
+// }
