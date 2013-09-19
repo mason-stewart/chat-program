@@ -7,3 +7,8 @@ Parse.initialize("hM7WAdklsjmnzqt381MfrXpcwlXy68a6VAQ4jdr9", "qFcvl9ZRt48yFxQACH
 //     alert("yay! it worked");
 //   }
 // });
+
+var chatMessage = _.template($("#chat-message"));
+chatMessage({
+	message: message
+})

@@ -20,13 +20,14 @@ $very-light-grey: #EEEEEE;
 	width: 768px; /*this is 80 percent of 960 (i think)*/
 	height: 85%;
 	margin: 0 auto;
-	background: $white;
+	background: $very-light-grey;
 	// border: 10px solid $light-grey;
 	box-shadow: 1px 1px 1px $blue;
 	box-shadow: inset 5px -5px 2px $light-grey,
 				inset -5px 5px 2px $light-grey;
 		// border-radius: 10px;
 	z-index: 1000;
+	overflow: scroll;
 }
 .chat-inputs {
 	width: 768px; 
@@ -37,6 +38,15 @@ $very-light-grey: #EEEEEE;
 		width: 85%;
 		margin-top: 5px;
 		height: 50px;
+		box-shadow: inset 5px -5px 2px $light-grey,
+				inset -5px 0px 2px $light-grey;
+		// box-shadow: inset 5px -5px 2px #acacac, 
+		// inset -4px 0px 2px #ACACAC, 
+		// inset 5px -6px 5px #0033ff, 
+		// inset -6px 1px 3px #0033ff;
+		// border-radius: 0px;
+		border: 1px solid $blue;
+		background: $very-light-grey;
 	}
 	button {
 		float: right;
