@@ -3,7 +3,7 @@ $light-grey: #acacac;
 $white: #ffffff;
 $dark-grey: #909090;
 $very-light-grey: #EEEEEE;
-
+$cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
 
 .chatroom-container {
 	width: 100%;
@@ -13,7 +13,7 @@ $very-light-grey: #EEEEEE;
 	border-radius: 10px;
 	
 	// box-shadow: 1px 5px 2px $dark-grey;
-	background: $blue;
+	background: $cool-blue-gradient;
 	padding: 1px;
 }
 .chat-window {
