@@ -86,3 +86,6 @@ $cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
 	margin: 5px;
 	border-radius:6px;
 }
+#timestamp {
+	float: right;
+}

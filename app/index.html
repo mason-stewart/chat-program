@@ -114,6 +114,9 @@
                 </h4>
                 <p>
                     <%= message.get('content') %>
+                    <span id="timestamp">
+                        <%= formatTime(message.createdAt) %>
+                    </span>
                 </p>
             </div>
         </script>

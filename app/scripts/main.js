@@ -19,7 +19,6 @@ function saveMessage(){
 	var message = new Message();
 	message.set('username', $('#username').val());
 	message.set('content', $('.form-control').val());
-	// message.set('time', formatTime(message.createdAt))
 	$('.form-control').val('');
 	message.save(message, {						
 
@@ -56,7 +55,7 @@ function timeoutRefresh(){
 	setInterval(checkForNewChat, 3000);
 }
 
-// function formatTime(timestamp) {
-// 	var time = moment(timestamp, "hh-mm");
-// 	return time;
-// }
+function formatTime(timestamp) {
+	var time = moment(timestamp).format("hh:mm");
+	return time;
+}
