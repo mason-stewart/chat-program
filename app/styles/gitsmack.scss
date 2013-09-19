@@ -1,0 +1,88 @@
+$blue: #0033ff;
+$light-grey: #acacac;
+$white: #ffffff;
+$dark-grey: #909090;
+$very-light-grey: #EEEEEE;
+$cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
+
+.container {
+	position: relative;
+}
+.chatroom-container {
+	width: 100%;
+	height: 700px;
+	margin-top: 20px;
+	border: 1px solid $light-grey;
+	border-radius: 10px;
+	
+	// box-shadow: 1px 5px 2px $dark-grey;
+	background: $cool-blue-gradient;
+	padding: 1px;
+}
+.chat-window {
+	width: 768px; /*this is 80 percent of 960 (i think)*/
+	height: 85%;
+	margin: 0 auto;
+	background: $very-light-grey;
+	// border: 10px solid $light-grey;
+	box-shadow: 1px 1px 1px $blue;
+	box-shadow: inset 5px -5px 2px $light-grey,
+				inset -5px 5px 2px $light-grey;
+		// border-radius: 10px;
+	z-index: 1000;
+	overflow: scroll;
+}
+.chat-inputs {
+	width: 768px; 
+	padding: 15px;
+	margin: 0 auto;
+	input {
+		float: left;
+		width: 85%;
+		margin-top: 5px;
+		height: 50px;
+		box-shadow: inset 5px -5px 2px $light-grey,
+				inset -5px 0px 2px $light-grey;
+		// box-shadow: inset 5px -5px 2px #acacac, 
+		// inset -4px 0px 2px #ACACAC, 
+		// inset 5px -6px 5px #0033ff, 
+		// inset -6px 1px 3px #0033ff;
+		// border-radius: 0px;
+		border: 1px solid $blue;
+		background: $very-light-grey;
+	}
+	button {
+		float: right;
+		padding: 10px 10px;
+		margin-top: 7px;
+		h3 {
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+.chat-message {
+	width: 700px;
+	margin: 0 auto;
+	height: 60px;
+	background: transparent;
+	z-index: 99999;
+	h4 {
+		display: inline-block;
+	}
+	p {
+		display: inline-block;
+		width: 80%;
+		margin-left: 20px;
+		margin-top: 20px;
+		vertical-align: middle;
+	}
+}
+#username {
+	width: 150px;
+	height: 40px;
+	position: absolute;
+	right: 20px;
+	margin: 5px;
+	border-radius:6px;
+}
