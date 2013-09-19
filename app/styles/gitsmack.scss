@@ -4,18 +4,24 @@ $white: #ffffff;
 $dark-grey: #909090;
 $very-light-grey: #EEEEEE;
 
+.navbar-header {
+	background-image: url(images/navbar.png);
+}
 
 .chatroom-container {
 	width: 100%;
 	height: 700px;
-	margin-top: 20px;
+	margin-top: 45px;
 	border: 1px solid $light-grey;
 	border-radius: 10px;
 	
 	// box-shadow: 1px 5px 2px $dark-grey;
 	background: $blue;
 	padding: 1px;
+	padding-top: 40px;
+	padding-bottom: 5px;
 }
+
 .chat-window {
 	width: 768px; /*this is 80 percent of 960 (i think)*/
 	height: 85%;
@@ -29,6 +35,7 @@ $very-light-grey: #EEEEEE;
 	z-index: 1000;
 	overflow: scroll;
 }
+
 .chat-inputs {
 	width: 768px; 
 	padding: 15px;
@@ -58,6 +65,7 @@ $very-light-grey: #EEEEEE;
 		}
 	}
 }
+
 .chat-message {
 	width: 700px;
 	margin: 0 auto;
