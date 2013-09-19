@@ -48,21 +48,12 @@
             <div class="chat-window">
                 <!-- messages displayed here -->
                 <!-- test message for formatting -->
-                <div class="chat-message">
-                <h4>
-                    TestUser
-                </h4>
-                <p>
-                    Test message contentTest message contentTest message contentTest message contentTest message contentTest message contentTest message content
-                </p>
-
-            </div>
 
             </div>
             <div class="chat-inputs">
                 <!-- input field, submit button, etc here -->
                 <input type="text" class="form-control" placeholder="Start Chatting!">
-                      <button class="btn btn-primary btn-lg" id="home-btn"><h3>Submit</h3></a></button>
+                      <button class="btn btn-primary btn-lg" id="submit-btn"><h3>Submit</h3></button>
 
             </div>
         </div>
@@ -73,6 +64,10 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/underscore/underscore-min.js"></script>
+
+            
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -87,7 +82,12 @@
         </script>
 
         <!-- build:js scripts/main.js -->
+        <script >
+        Parse.initialize("hM7WAdklsjmnzqt381MfrXpcwlXy68a6VAQ4jdr9", "qFcvl9ZRt48yFxQACHV53qouuVXVViVvMzY4FDug");
+
+        </script>
         <script src="scripts/main.js"></script>
+
         <!-- endbuild -->
 
         <!-- endbuild -->
@@ -110,10 +110,10 @@
         <script type="text/template" id="chat-message">
             <div class="chat-message">
                 <h4>
-                    <%= message.username %>
+                    <%= message.get('username') %>
                 </h4>
                 <p>
-                    <%= message.content %>
+                    <%= message.get('content') %>
                 </p>
             </div>
         </script>

@@ -1,14 +1,62 @@
-Parse.initialize("hM7WAdklsjmnzqt381MfrXpcwlXy68a6VAQ4jdr9", "qFcvl9ZRt48yFxQACHV53qouuVXVViVvMzY4FDug");
-
-// var TestObject = Parse.Object.extend("TestObject");
-// var testObject = new TestObject();
-// testObject.save({foo: "bar"}, {
-//   success: function(object) {
-//     alert("yay! it worked");
-//   }
-// });
-
-var chatMessage = _.template($("#chat-message"));
-chatMessage({
-	message: message
+$(document).ready(function(){
+	getMessages()
+	$("#submit-btn").click(function(){saveMessage()})
 })
+
+
+
+var Message = Parse.Object.extend("Message");
+	
+var MessageCollection = Parse.Collection.extend({		
+	model: Message						
+});
+var messages = new MessageCollection();
+
+
+// function to save message to parse
+
+function saveMessage(){
+	var message = new Message();
+	message.set('username', $('#username').val());
+	message.set('content', $('.form-control').val());
+	// message.set('time', formatTime(message.createdAt))
+	$('.form-control').val('');
+	message.save(message, {						
+
+		success: function(message){
+			console.log('message saved, YEAH!!!!!!!!!!!!!!!!!')
+			addToChatWindow(message);
+		}, 
+		error: function(message, error){
+			console.log('message not saved, BOOOO!!!!!!!!!!!!!!!!!')
+		}
+	})	
+}
+
+function getMessages(){
+	messages.fetch({
+		success: function(collection){
+			collection.each(function(msg){
+				addToChatWindow(msg)
+			})
+		}
+	})
+}
+
+
+function addToChatWindow(msg){
+	message = msg;
+	var chatMessage = _.template($("#chat-message").text());
+	chatMessage({
+		message: message
+	})
+	$(".chat-window").append(chatMessage)
+}
+function timeoutRefresh(){
+	setInterval(checkForNewChat, 3000);
+}
+
+// function formatTime(timestamp) {
+// 	var time = moment(timestamp, "hh-mm");
+// 	return time;
+// }
