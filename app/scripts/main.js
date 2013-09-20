@@ -59,3 +59,6 @@ function formatTime(timestamp) {
 	var time = moment(timestamp).format("hh:mm");
 	return time;
 }
+function checkForNewChat (){
+	
+}
