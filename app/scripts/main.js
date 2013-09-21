@@ -2,7 +2,7 @@ $(document).ready(function(){
 	getMessages()
 	$("#submit-btn").click(function(){saveMessage()})
 })
-
+var namespacing = {};
 
 
 var Message = Parse.Object.extend("Message");
@@ -36,6 +36,7 @@ function getMessages(){
 	messages.fetch({
 		success: function(collection){
 			collection.each(function(msg){
+				namespacing.counter = namespacing.counter + 1;
 				addToChatWindow(msg)
 			})
 		}
@@ -60,5 +61,9 @@ function formatTime(timestamp) {
 	return time;
 }
 function checkForNewChat (){
-	
+	messages.fetch({
+		success: function(collection){
+			
+		}
+	})
 }
