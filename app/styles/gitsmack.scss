@@ -2,7 +2,7 @@ $blue: #0033ff;
 $light-grey: #acacac;
 $white: #ffffff;
 $dark-grey: #909090;
-$very-light-grey: #EEEEEE;
+$very-light-grey: #FCFCFC;
 $cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
 $black-gradient: linear-gradient(top, lighten(black, 20%), black);
 
@@ -14,6 +14,7 @@ $black-gradient: linear-gradient(top, lighten(black, 20%), black);
 	// background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);
 	padding-bottom: 5px;
 	color: black;
+	border-bottom-width: 5px;
 
 }
 
@@ -44,6 +45,12 @@ $black-gradient: linear-gradient(top, lighten(black, 20%), black);
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
+body {
+	// background-image:url('http://cdn.bleacherreport.net/images_root/slides/photos/000/897/602/smackdown-logo_display_image.png?1303990582');
+	// background-repeat: repeat-y;
+	
+}
+
 .container {
 	position: relative;
 }
@@ -51,15 +58,17 @@ $black-gradient: linear-gradient(top, lighten(black, 20%), black);
 .chatroom-container {
 	width: 100%;
 	height: 700px;
-	margin-top: 45px;
-	border: 1px solid $light-grey;
+	margin-top: 75px;
+	border: 1px solid #acacac;
 	border-radius: 10px;
-	
-	// box-shadow: 1px 5px 2px $dark-grey;
-	background: $cool-blue-gradient;
+	background: rgb(29, 27, 27);
 	padding: 1px;
 	padding-top: 40px;
 	padding-bottom: 5px;
+	box-shadow: 3px 5px 15px rgb(61, 61, 61);
+	background-repeat: no-repeat;
+	background-image: url('http://www.desktopas.com/files/2013/06/Black-Abstract-Background-Minimalistic-Textures-Gray-White-Arrows-1920x1080.jpg');
+	background-size: 1195px 800px;
 }
 
 .chat-window {
@@ -74,6 +83,14 @@ $black-gradient: linear-gradient(top, lighten(black, 20%), black);
 		// border-radius: 10px;
 	z-index: 1000;
 	overflow: scroll;
+
+}
+
+.git-title {
+	left: 368px;
+	float: center;
+	top: 5px;
+	position: relative;
 }
 
 .chat-inputs {
@@ -93,6 +110,7 @@ $black-gradient: linear-gradient(top, lighten(black, 20%), black);
 		// inset -6px 1px 3px #0033ff;
 		// border-radius: 0px;
 		border: 1px solid $blue;
+		border-radius: 55px;
 		background: $very-light-grey;
 	}
 	button {
@@ -124,15 +142,38 @@ $black-gradient: linear-gradient(top, lighten(black, 20%), black);
 	}
 }
 #username {
+	top: 4px;
 	width: 150px;
-	height: 40px;
+	height: 35px;
 	position: absolute;
 	right: 20px;
 	margin: 5px;
-	border-radius:6px;
+	border-radius: 20px;
+	padding-left: 10px;
 }
 
 #timestamp {
 	float: right;
 }
+// new classes-Tyler
+.glyphicon-user {
+position: absolute;
+top: 10px;
+right: 185px;
+display: inline-block;
+font-family: 'Glyphicons Halflings';
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+}
 
+.subhead {
+	position: relative;
+	top: 6px;
+	left: 20px;
+	font-size: 20px;
+	margin: 0 0 10px;
+	color: rgb(175, 30, 30);
+}
