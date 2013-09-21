@@ -1,9 +1,9 @@
 
 $(document).ready(function(){
-	getMessages()
+	getMessages();
 	$("#submit-btn").click(function(){saveMessage()})
-	timeoutRefresh()
-})
+	timeoutRefresh();
+});
 
 var Message = Parse.Object.extend("Message");
 
@@ -27,41 +27,41 @@ function saveMessage(){
 			console.log('message saved, YEAH!!!!!!!!!!!!!!!!!')
 		}, 
 		error: function(message, error){
-			console.log('message not saved, BOOOO!!!!!!!!!!!!!!!!!')
+			console.log('message not saved, BOOOO!!!!!!!!!!!!!!!!!');
 		}
-	})		
-}
+	});		
+};
 
 function getMessages(){
 	messages.fetch({
 		success: function(collection){
 			$('.chat-window').html('')  /*!!! this goes here because parse takes a half a second to refresh, 2 lines up, then clears .chat-window*/
 			collection.each(function(msg){
-				addToChatWindow(msg)
-			})
+				addToChatWindow(msg);
+			});
 		}
-	})
-}
+	});
+};
 
 function addToChatWindow(msg){
 	message = msg;
 	var chatMessage = _.template($("#chat-message").text());
 	chatMessage({
 		message: message
-	})
+	});
 	$(".chat-window").append(chatMessage)
-}
+};
 
 function timeoutRefresh(){
 	setInterval(checkForNewChat, 3000);
-}
+};
 
 function formatTime(timestamp) {
 	var time = moment(timestamp).format("hh:mm");
 	return time;
-}
+};
 
 function checkForNewChat(){
 	getMessages();				/*!!! as opposed to putting --$('.chat-window').html('')-- here, because it clears the .chat-window before parse updates/refreshes/fetches so you see the half a second it takes parse to refresh happening. clear screen, wait half a second, then refresh*/
-}
+};
 
