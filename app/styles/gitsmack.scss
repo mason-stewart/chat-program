@@ -3,8 +3,11 @@ $light-grey: #acacac;
 $white: #ffffff;
 $dark-grey: #909090;
 $very-light-grey: #EEEEEE;
+$cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
 
-
+.container {
+	position: relative;
+}
 .chatroom-container {
 	width: 100%;
 	height: 700px;
@@ -13,7 +16,7 @@ $very-light-grey: #EEEEEE;
 	border-radius: 10px;
 	
 	// box-shadow: 1px 5px 2px $dark-grey;
-	background: $blue;
+	background: $cool-blue-gradient;
 	padding: 1px;
 }
 .chat-window {
@@ -74,4 +77,15 @@ $very-light-grey: #EEEEEE;
 		margin-top: 20px;
 		vertical-align: middle;
 	}
+}
+#username {
+	width: 150px;
+	height: 40px;
+	position: absolute;
+	right: 20px;
+	margin: 5px;
+	border-radius:6px;
+}
+#timestamp {
+	float: right;
 }

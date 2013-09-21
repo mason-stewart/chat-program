@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	getMessages();
 	$("#submit-btn").click(function(){saveMessage()})
@@ -6,31 +5,28 @@ $(document).ready(function(){
 });
 
 var Message = Parse.Object.extend("Message");
-
-var messageCollection = Parse.Collection.extend({		
+	
+var MessageCollection = Parse.Collection.extend({		
 	model: Message						
 });
-
-var messages = new messageCollection();	
-
-// function to save message to parse
+var messages = new MessageCollection();
 
 function saveMessage(){
 	var message = new Message();
 	message.set('username', $('#username').val());
 	message.set('content', $('.form-control').val());
-	$('.form-control').val(''); /*  set the users input values, line 19 + 20, onto parse server and then clear the input fields. nice jake */
-
+	$('.form-control').val('');
 	message.save(message, {						
 
 		success: function(message){
 			console.log('message saved, YEAH!!!!!!!!!!!!!!!!!')
+			addToChatWindow(message);
 		}, 
 		error: function(message, error){
-			console.log('message not saved, BOOOO!!!!!!!!!!!!!!!!!');
+			console.log('message not saved, BOOOO!!!!!!!!!!!!!!!!!')
 		}
-	});		
-};
+	})	
+}
 
 function getMessages(){
 	messages.fetch({
@@ -49,6 +45,7 @@ function addToChatWindow(msg){
 	chatMessage({
 		message: message
 	});
+
 	$(".chat-window").append(chatMessage)
 };
 
@@ -64,4 +61,3 @@ function formatTime(timestamp) {
 function checkForNewChat(){
 	getMessages();				/*!!! as opposed to putting --$('.chat-window').html('')-- here, because it clears the .chat-window before parse updates/refreshes/fetches so you see the half a second it takes parse to refresh happening. clear screen, wait half a second, then refresh*/
 };
-
