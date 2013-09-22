@@ -19,7 +19,7 @@
 
 
     //     describe('that has Parse(server) functionality', function () {
-    //         it('that passes around an object instance like a 2 dollar whore', function () {
+    //         it('that passes around an object instance', function () {
     //         	message.set('username', $('#username').val());
 
     //         	success: function(results) {
