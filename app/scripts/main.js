@@ -4,6 +4,7 @@ $(document).ready(function(){
 	timeoutRefresh();
 });
 
+
 var Message = Parse.Object.extend("Message");
 	
 var MessageCollection = Parse.Collection.extend({		
