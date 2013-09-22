@@ -2,23 +2,105 @@ $blue: #0033ff;
 $light-grey: #acacac;
 $white: #ffffff;
 $dark-grey: #909090;
-$very-light-grey: #EEEEEE;
+$very-light-grey: #FCFCFC;
 $cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
+$black-gradient: linear-gradient(top, lighten(black, 20%), black);
+$gitred: rgb(175, 30, 30);
+
+.navbar-header {}
+	
+.navbar-inverse {
+	background: white;
+	// background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);
+	padding-bottom: 5px;
+	color: black;
+	border-bottom-width: 10px;
+	border-style: double;
+	background-image: url('http://www.desktopas.com/files/2013/06/Black-Abstract-Background-Minimalistic-Textures-Gray-White-Arrows-1920x1080.jpg');
+
+
+}
+
+// Home-navigation
+.navbar-inverse .navbar-nav .active a {
+	color: black;
+	background: white; /* W3C */
+	// background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* W3C */
+	&:hover {
+		background: white;
+	}
+}
+
+//git-Smack 
+.navbar-inverse .navbar-brand{
+	color: whitesmoke;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	font-size: 40px;
+	padding-bottom: 5px;
+	// text-shadow: -1px 1px 0px rgb(175, 30, 30);
+
+}
+
+// active: git-Smack
+.navbar-inverse .navbar-brand:hover {
+	color: whitesmoke;
+}
+
+// About and Home
+.navbar-inverse .navbar-nav > li > a {
+	color: whitesmoke;
+}
+
+.navbar-brand {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+// About, Home, User
+.navbar-nav {
+	position: absolute;
+	float: left;
+	margin: 0;
+	left: 30px;
+	font-family: Source Sans Pro;
+	font-weight: 900;
+	font-size: 20px;
+	top: 25px;
+}
+
+#active {
+	color: whitesmoke;
+}
+
+body {
+	background-image: url('http://s1.goodfon.com/wallpaper/previews-middle/63011.jpg');
+	background-size: 615px 950px;
+
+	// background-image:url('http://cdn.bleacherreport.net/images_root/slides/photos/000/897/602/smackdown-logo_display_image.png?1303990582');
+	// background-repeat: repeat-y;
+	
+}
 
 .container {
 	position: relative;
 }
+
 .chatroom-container {
 	width: 100%;
 	height: 700px;
-	margin-top: 20px;
-	border: 1px solid $light-grey;
+	margin-top: 75px;
+	border: 1px solid #acacac;
 	border-radius: 10px;
-	
-	// box-shadow: 1px 5px 2px $dark-grey;
-	background: $cool-blue-gradient;
+	background: rgb(29, 27, 27);
 	padding: 1px;
+	padding-top: 40px;
+	padding-bottom: 5px;
+	box-shadow: 3px 5px 15px rgb(61, 61, 61);
+	background-repeat: no-repeat;
+	background-image: url('http://www.desktopas.com/files/2013/06/Black-Abstract-Background-Minimalistic-Textures-Gray-White-Arrows-1920x1080.jpg');
+	background-size: 1195px 800px;
 }
+
 .chat-window {
 	width: 768px; /*this is 80 percent of 960 (i think)*/
 	height: 85%;
@@ -31,7 +113,16 @@ $cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
 		// border-radius: 10px;
 	z-index: 1000;
 	overflow: scroll;
+
 }
+
+.git-title {
+	left: 368px;
+	float: center;
+	top: 5px;
+	position: relative;
+}
+
 .chat-inputs {
 	width: 768px; 
 	padding: 15px;
@@ -48,7 +139,8 @@ $cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
 		// inset 5px -6px 5px #0033ff, 
 		// inset -6px 1px 3px #0033ff;
 		// border-radius: 0px;
-		border: 1px solid $blue;
+		border: 1px solid grey;
+		border-radius: 55px;
 		background: $very-light-grey;
 	}
 	button {
@@ -61,6 +153,7 @@ $cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
 		}
 	}
 }
+
 .chat-message {
 	width: 700px;
 	margin: 0 auto;
@@ -79,13 +172,78 @@ $cool-blue-gradient: linear-gradient(top, lighten($blue, 10%), $blue);
 	}
 }
 #username {
+	top: 26px;
 	width: 150px;
-	height: 40px;
+	height: 35px;
 	position: absolute;
 	right: 20px;
 	margin: 5px;
-	border-radius:6px;
+	border-radius: 20px;
+	padding-left: 10px;
 }
+
+.form-control:focus {
+	border-color: #66afe9;
+	outline: 0;
+	box-shadow: inset 5px -5px 2px #acacac, inset -5px 0px 2px #acacac;
+	border: 1px solid #FDFEFF;
+}
+
+.btn-primary {
+	color: white;
+	background-color: $gitred;
+	border-color: rgb(255, 255, 255);
+}
+
+.btn-primary:hover {
+	color: white;
+	background-color: $gitred;
+	border-color: rgb(255, 255, 255);
+}
+
+.btn-primary:active {
+	color: white;
+	background-color: rgb(175, 30, 30);
+	border-color: rgb(255, 255, 255);
+	box-shadow: inset 1px 1px 4px rgb(26, 3, 3);
+}
+
 #timestamp {
 	float: right;
+}
+
+// new classes-Tyler
+.glyphicon-user {
+	color: whitesmoke;
+	position: absolute;
+	top: 35px;
+	right: 185px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+.subhead {
+	position: relative;
+	top: 6px;
+	left: 20px;
+	font-size: 20px;
+	margin: 0 0 10px;
+	color: $gitred;
+	// text-shadow: -1px 1px 0px rgb(197, 197, 197);
+}
+
+// User input + glyph
+.user-glyph {
+
+}
+hr {
+	width: 100%;
+	border: 1px solid $gitred;
+	color: black;
+	box-shadow: 1px 3px 5px darken($gitred, 10%);
 }
